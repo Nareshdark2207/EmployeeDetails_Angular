@@ -1,0 +1,158 @@
+<app-header></app-header>
+<div class="container p-5">
+    <div class="form-controller">
+        <h3 class="title">Add New Employee</h3>
+    <form [formGroup]="exform" (ngSubmit)="onSubmit(exform.value)">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mt-3 mb-3">
+                        <label><strong>First Name &nbsp;<span class="required">*</span></strong></label>
+                        <input type="text" formControlName="firstName" name="firstName" class="form-control" placeholder="Enter your first name"
+                            [(ngModel)]  = "employee.firstName" autocomplete="off" required>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="exform.controls['firstName'].dirty && exform.hasError.('required','firstName')"> First name is required </span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mt-3 mb-3">
+                        <label><strong>Last Name&nbsp;<span class="required">*</span></strong></label>
+                        <input type="text" class="form-control" formControlName="lastName" placeholder="Enter your last name"
+                            [(ngModel)]  = "employee.lastName" name="lastName" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mt-3 mb-3">
+                        <label for="gender"><strong>Gender&nbsp;<span class="required">*</span></strong></label>
+                        <select class="box_1" required name="gender" formControlName="gender" [(ngModel)]  = "employee.gender" autocomplete="off" >  
+                            <option value="undefined" selected >Select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="exform.controls['gender'].dirty && exform.hasError.('required','gender')" >Gender is Required</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Email Address&nbsp;<span class="required">*</span></strong></label>
+                        <input type="text" class="form-control" formControlName="emailid" autocomplete="off" placeholder="example@gmail.com"
+                            [(ngModel)]  = "employee.emailid" name="emailid" required>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}" *ngIf="emailid.invalid && emailid.touched" >Enter the Valid Email Id</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Mobile Number&nbsp;<span class="required">*</span></strong></label>
+                        <input type="number" class="form-control" formControlName="mobileNumber" autocomplete="off" placeholder="Enter the mobile number"
+                        [(ngModel)]  = "employee.mobileNumber" name="mobileNumber" required >
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span pattern="^[0-9]{10}$" *ngIf="mobileNumber.invalid && mobileNumber.touched" >Enter the Valid Mobile number</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Date Of Birth&nbsp;<span class="required">*</span></strong></label>
+                        <input type="date" class="form-control" formControlName="dateofbirth" autocomplete="off" placeholder="Enter the dateofbirth"
+                        [(ngModel)]  = "employee.dateofbirth" name="dateofbirth" required>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="dateofbirth.invalid && dateofbirth.touched"> Select the Valid Date Of Birth </span>
+                    </div> -->
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Employee Number&nbsp;<span class="required">*</span></strong></label>
+                        <input type="text" required class="form-control" formControlName="empid" autocomplete="off" placeholder="Enter the employee number"
+                            [(ngModel)]  = "employee.empid" name="empid" required>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="empid.invalid && empid.touched" >Enter the Valid Employee Number</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Job Position&nbsp;<span class="required">*</span></strong></label>
+                        <select name="jobposition" required class="box_1" formControlName="jobposition"  [(ngModel)]  = "employee.jobposition" autocomplete="off" >  
+                            <option value="undefined" selected >Select a job position</option>
+                            <option value="Full Stack developer">Full Stack developer</option>
+                            <option value="Back end developer">Back end developer</option>
+                            <option value="Front end developer">Front end developer</option>
+                            <option value="UI/UX designer">UI/UX designer</option>
+                            <option value="Graphic designer">Graphic designer</option>
+                            <option value="Content writer">Content writer</option>
+                            <option value="Software Testing">Software Testing</option>
+                        </select>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="jobposition.invalid && jobposition.touched" >Select the Valid Job Position</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Date Of Hire&nbsp;<span class="required">*</span></strong></label>
+                        <input type="date" class="form-control" formControlName="dateofhire" placeholder="Enter the dateofhire"
+                        [(ngModel)]  = "employee.dateofhire" name="dateofhire" autocomplete="off" required>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="dateofhire.invalid && dateofhire.touched" >Select the Valid Date</span>
+                    </div> -->
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+                    <div class="form-group mb-3">
+                        <label><strong>Employee Status&nbsp;<span class="required">*</span></strong></label>
+                        <select name="empstatus" class="box_1" formControlName="empstatus" [(ngModel)]  = "employee.empstatus" >  
+                            <option value="undefined" selected >Select the employee status</option>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Temporary">Temporary</option>
+                            <option value="At the Contract">At the Contract</option>
+                        </select>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="empstatus.invalid && empstatus.touched" >Select the Valid Status</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Current Address&nbsp;<span class="required">*</span></strong></label>
+                        <input type="text" class="form-control" formControlName="currentaddress"  placeholder="Enter the current address"
+                        [(ngModel)]  = "employee.currentaddress" name="currentaddress" autocomplete="off" required>
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="currrentaddress.invalid && currrentaddress.touched" >Enter the Valid Address</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group mb-3">
+                        <label><strong>Home Address&nbsp;<span class="required">*</span></strong></label>
+                        <input type="text" class="form-control" formControlName="homeaddress" placeholder="Enter the home address"
+                        [(ngModel)]  = "employee.homeaddress" name="homeaddress" autocomplete="off" required >
+                    </div>
+                    <!-- <div class="errormessage">
+                        <span *ngIf="homeaddress.invalid && homeaddress.touched" >Enter the Valid Home Address</span>
+                    </div> -->
+                </div>        
+            </div>
+                    <div class="flex mt-4" >
+                        <div class="flex-item">
+                            <button type="submit" class="btn-6 btn-6a" [disabled]="!exform.valid">Submit</button>
+                        </div>
+                        <div class="flex-item">
+                            <button class="btn-0 btn-0a" (click)="oncancel()" type="submit">Cancel</button>
+                        </div>
+                   </div>
+
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

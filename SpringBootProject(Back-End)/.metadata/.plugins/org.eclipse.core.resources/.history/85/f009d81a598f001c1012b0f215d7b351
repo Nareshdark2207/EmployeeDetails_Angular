@@ -1,0 +1,5 @@
+package com.example.empdata.controller;
+
+public class JwtAuthenticationController {
+
+}

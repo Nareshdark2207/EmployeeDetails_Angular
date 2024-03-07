@@ -1,0 +1,22 @@
+.card{
+    border: 0;
+    border-radius: 10px;
+    font-family:'poppins',sans-serif;
+    margin-bottom:10px;
+}
+.shadow{
+    box-shadow: 0 0.5rem 1rem rgb(143 143 143 / 50%) !important;
+}
+.card-title{
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.card-text{
+    font-size: 14px;
+    line-height: 30px;
+}
+.btn{
+    font-size:12px;
+}

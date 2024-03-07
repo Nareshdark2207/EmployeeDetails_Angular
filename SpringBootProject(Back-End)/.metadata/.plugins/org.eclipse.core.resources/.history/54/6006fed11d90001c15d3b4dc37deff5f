@@ -1,0 +1,33 @@
+package com.example.empdata.service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import com.example.empdata.model.loginData;
+import com.example.empdata.repository.loginRepository;
+
+@Service
+public class JwtUserDetailsService implements UserDetailsService {
+	
+//	@Autowired
+//	private loginRepository loginRepository;
+	
+	@Override
+	public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+		loginData loginData = null;
+		if (loginData!=null) {
+			return new User(loginData.getUserId(), loginData.getPassword(), new ArrayList<>());
+		} else {
+			throw new UsernameNotFoundException("User not found with userId: " + userId);
+		}
+
+	}
+
+}

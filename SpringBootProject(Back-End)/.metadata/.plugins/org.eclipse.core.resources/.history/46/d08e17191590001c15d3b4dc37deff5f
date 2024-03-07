@@ -1,0 +1,11 @@
+package com.example.empdata.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.empdata.model.loginData;
+
+
+public interface loginRepository extends JpaRepository<loginData, Long>{
+	
+	loginData findByEmailid(String email);
+
+}

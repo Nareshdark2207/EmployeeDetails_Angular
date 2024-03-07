@@ -1,0 +1,5 @@
+package com.example.empdata.config;
+
+public class WebSecurityConfig {
+
+}

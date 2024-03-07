@@ -1,0 +1,155 @@
+<app-emp-header></app-emp-header>
+<div class="container-fluid mt-05">
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Email Address</th>
+                <th>Mobile Number</th>
+                <th>Date Of Birth</th>
+                <th>Employee Number</th>
+                <th>Job Position</th>
+                <th>Date Of Hire</th>
+                <th>Employee Status</th>
+                <!-- <th>Current Address</th>
+                <th>Home Address</th> -->
+                <th>Actions</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr *ngFor= "let employee of employees">
+              <td>{{ employee.firstName }}</td>
+              <td>{{ employee.lastName }}</td>
+              <td>{{ employee.gender }}</td>
+              <td>{{ employee.emailid }}</td>
+              <td>{{ employee.mobileNumber }}</td>
+              <td>{{ employee.dateofbirth }}</td>
+              <td>{{ employee.empid }}</td>
+              <td>{{ employee.jobposition }}</td>
+              <td>{{ employee.dateofhire }}</td>
+              <td>{{ employee.empstatus }}</td>
+              <!-- <td>{{ employee.currentaddress }}</td>
+              <td>{{ employee.homeaddress }}</td> -->
+              <td>
+                <button (click) = "viewEmployee(employee)" class = "btn btn-primary" data-bs-toggle="modal" data-bs-target="#ViewModal"><img src="./assets/images/view.png" alt="Image" class="img-fluid"></button>
+              </td>
+            </tr>
+        </tbody>
+     </table>
+
+<!--View Model-->
+<div class="modal fade " id="ViewModal"  tabindex="-1" aria-labelledby="ViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="title" id="ViewModalLabel">View Employee</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="container">
+                <form>
+                  <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">                     
+                            <div class="form-group mb-3">
+                              <label><strong>First Name </strong></label>
+                                <input type="text" class="form-control one" id="firstName" placeholder="First Name"
+                                [(ngModel)] = "employee.firstName" name="firstName" disabled="true">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">  
+                            <div class="form-group mb-3">
+                              <label><strong>Last Name</strong></label>
+                                <input type="text" class="form-control one" id="lastName" placeholder="Last Name"
+                                [(ngModel)]  = "employee.lastName" name="lastName" disabled="true">
+                            </div>
+                       </div>
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                        <div class="form-group mb-3">
+                          <label for="gender"><strong>Gender</strong></label>
+                            <input type="text" class="form-control one" id="gender" placeholder="Gender"
+                            [(ngModel)]  = "employee.gender" name="gender" disabled="true">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row ">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                            <div class="form-group mb-3">
+                              <label><strong>Email Address</strong></label>
+                                <input type="text" class="form-control one" id="emailid" placeholder="Email Id"
+                                [(ngModel)]  = "employee.emailid" name="emailid" disabled="true">
+                            </div>
+                        </div>
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                          <div class="form-group mb-3">
+                            <label><strong>Mobile Number</strong></label>
+                            <input type="number" class="form-control one" id="mobileNumber" placeholder="Mobile Number"
+                            [(ngModel)]  = "employee.mobileNumber" name="mobileNumber" disabled="true">
+                          </div>
+                       </div>
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                          <div class="form-group mb-3">
+                            <label><strong>Date Of Birth </strong></label>
+                             <input type="date" class="form-control one" id="dateofbirth" placeholder="Date Of Birth"
+                              [(ngModel)]  = "employee.dateofbirth" name="dateofbirth" disabled="true">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row ">
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                          <div class="form-group mb-3">
+                                <label><strong>Employee Number</strong></label>
+                                <input type="number" class="form-control one" id="empid" placeholder="Employee Id"
+                                [(ngModel)]  = "employee.empid" name="empid" disabled="true">
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                            <div class="form-group mb-3">
+                              <label><strong>Job Position</strong></label>
+                                <input type="number" class="form-control one" id="jobposition" placeholder="Job Position"
+                                [(ngModel)]  = "employee.jobposition" name="jobposition" disabled="true">
+                            </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                          <div class="form-group mb-3">
+                              <label><strong>Date Of Hire</strong></label>
+                              <input type="date" class="form-control one" id="dateofhire" placeholder="Date Of Hire"
+                              [(ngModel)]  = "employee.dateofhire" name="dateofhire" disabled="true">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">   
+                      <div class="form-group mb-3">
+                        <label><strong>Employee Status </strong></label>
+                        <input type="text" class="form-control one" id="empstatus" placeholder="Employee Status"
+                        [(ngModel)]  = "employee.empstatus" name="empstatus" disabled="true">
+                      </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                          <div class="form-group mb-3">
+                            <label><strong>Current Address</strong></label>
+                              <input type="text" class="form-control one" id="currentaddress" placeholder="Current Address"
+                              [(ngModel)]  = "employee.currentaddress" name="currentaddress" disabled="true">
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+                            <div class="form-group mb-3">
+                              <label><strong>Home Address</strong></label>
+                              <input type="text" class="form-control one" id="homeaddress" placeholder="Home Address"
+                              [(ngModel)]  = "employee.homeaddress" name="homeaddress" disabled="true">
+                            </div>
+                      </div>
+                    </div>
+                </form>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn-6 btn-6a" data-bs-dismiss="modal">Close</button>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>
+  <app-emp-footer></app-emp-footer>

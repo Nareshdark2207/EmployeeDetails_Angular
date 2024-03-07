@@ -1,0 +1,120 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid mt-05">
+    <table>
+        <thead>
+            <tr>
+                <th>Username / Email Address</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr *ngFor= "let employee of employees">
+              <td>{{ employee.userId }}</td>
+              <td>{{ employee.password }}</td>
+              <td>{{ employee.role }}</td>
+              <td>
+                <button (click) = "updateUserEmployee(employee)" class = "btn btn-success" style="margin-right: 5px" data-bs-toggle="modal" data-bs-target="#UpdateModal"> <img src="./assets/images/edit.png" alt="Image" class="img-fluid"></button>
+                <button (click) = "deleteUserEmployee(employee.id)" class = "btn btn-danger" style="margin-right: 5px"><img src="./assets/images/delete.png" alt="Image" class="img-fluid"></button>
+                <button (click) = "viewUserEmployee(employee)" class = "btn btn-primary" data-bs-toggle="modal" data-bs-target="#ViewModal"><img src="./assets/images/view.png" alt="Image" class="img-fluid"></button>
+              </td>
+            </tr>
+        </tbody>
+     </table>
+</div>
+
+<!--Update Model-->
+<div class="modal fade " id="UpdateModal"  tabindex="-1" aria-labelledby="UpdateModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="title" id="UpdateModalLabel">Update Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+              <form (ngsubmit)="onUserUpdate()">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                     
+                          <div class="form-group mb-3">
+                              <label><strong>UserName / Email Address</strong></label>
+                              <input type="text" class="form-control" placeholder="UserName / Email Address" 
+                              [(ngModel)] = "employee.userId" name="userId">
+                          </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">  
+                          <div class="form-group mb-3">
+                              <label><strong>Password</strong></label>
+                              <input type="text" class="form-control" placeholder="Password" 
+                              [(ngModel)]  = "employee.password" name="password">
+                          </div>
+                     </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                        <label><strong>Role</strong></label>
+                        <select class="form-group first box_1" required name="role" [(ngModel)]  = "employee.role" autocomplete="off" >  
+                          <option value="undefined" disabled selected >Select the Role</option>
+                          <option value="hr">HR</option>
+                          <option value="user">User</option>
+                      </select>
+                      </div>
+                  </div>
+              </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn-0 btn-0a" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn-6 btn-6a" data-bs-dismiss="modal" (click)="onUserUpdate()">Update</button>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+<!--View Model-->
+<div class="modal fade " id="ViewModal"  tabindex="-1" aria-labelledby="ViewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="title" id="ViewModalLabel">View Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+              <form>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                     
+                          <div class="form-group mb-3">
+                            <label><strong>UserName / Email Address</strong></label>
+                              <input type="text" class="form-control one" placeholder="UserName / Email Address"
+                              [(ngModel)] = "employee.userId" name="username" disabled="true">
+                          </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">  
+                          <div class="form-group mb-3">
+                            <label><strong>Password</strong></label>
+                              <input type="text" class="form-control one" placeholder="Last Name"
+                              [(ngModel)]  = "employee.password" name="password" disabled="true">
+                          </div>
+                     </div>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                      <div class="form-group mb-3">
+                        <label for="gender"><strong>Role</strong></label>
+                          <input type="text" class="form-control one" placeholder="Role"
+                          [(ngModel)]  = "employee.role" name="role" disabled="true">
+                      </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn-6 btn-6a" data-bs-dismiss="modal">Close</button>
+        </div>
+     </div>
+  </div>
+</div>
+
+
+
+<app-admin-footer></app-admin-footer>

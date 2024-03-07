@@ -1,0 +1,53 @@
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="./assets/images/undraw_remote.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mt-5 mb-4">
+              <h3 class="topic">Sign In</h3>
+              <p class="mb-4">HR and Admin created a employee details. Employee can view our details , This is way to the username and password you would use to login. Then, you can request a admin account for this site.</p>
+            </div>
+            <!-- (ngSubmit)="GetFormData(loginForm.value)" -->
+            <form  #loginForm="ngForm" novalidate>
+              <div class="form-group first">
+                <input type="text" required minlength="3" [(ngModel)] = "employee.username" class="form-control" name="username" #username="ngModel" autocomplete="off" placeholder="Username / EmailId" ngModel>
+              </div>
+              <div class="errormessage">
+                <div *ngIf="username.invalid && username.touched">Username is invalid</div>
+              </div>
+              <div class="form-group last">
+                <!-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" -->
+                <input type="password" required minlength="3" [(ngModel)] = "employee.password" class="form-control" name="password" #password="ngModel"  autocomplete="off" placeholder="Password" ngModel>
+              </div>
+              <div class="errormessage">
+                <div *ngIf="password.invalid && password.touched">Password is invalid</div>
+              </div>
+
+              <div class="d-flex mb-4 align-items-center">
+                <div class="contact100-form-checkbox">
+                  <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                  <label class="label-checkbox100" for="ckb1">
+                    Remember me
+                  </label>
+                </div>
+    
+                <div class="fpass">
+                  <a href="#" class="txt1" routerLink="/forgot-password">
+                    Forgot Password?
+                  </a>
+                </div>
+              </div>
+              
+              <input type="submit" (click) = "LoginDetails(employee)" value="Log In" class="btn btn-block btn-primary">
+              <!-- [disabled]="loginForm.invalid" -->
+            </form>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+package com.example.empdata.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+//import com.swiftloop.model.UserDetails;
+
+public interface UserService {
+	
+	void addUser(UserDetails user);
+	
+	void updateUser(UserDetails user);
+
+	UserDetails fetchUserByUserId(String userId);
+
+	String updateUserPassword(String userId, String currentPassword, String newPassword);
+}

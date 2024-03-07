@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonFormat"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.example.authentication.Security.SecurityTokenUtil"/>
+    <fullyQualifiedTypeName name="com.example.authentication.Security.SecurityAuthenticationEntryPoint"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.SecurityConfigurerAdapter"/>
+    <fullyQualifiedTypeName name="com.example.authentication.payload.request.LoginRequest"/>
+    <fullyQualifiedTypeName name="com.example.authentication.payload.response.JwtResponse"/>
+    <fullyQualifiedTypeName name="com.example.authentication.security.services.UserDetailsImpl"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="com.example.empdata.service.UserService"/>
+    <fullyQualifiedTypeName name="com.example.empdata.config.JwtTokenUtil"/>
+    <fullyQualifiedTypeName name="com.example.empdata.model.JwtRequest"/>
+    <fullyQualifiedTypeName name="com.example.empdata.model.JwtResponse"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
+    <fullyQualifiedTypeName name="com.example.empdata.service.JwtUserDetailsService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.context.properties.EnableConfigurationProperties"/>
+    <fullyQualifiedTypeName name="com.example.empdata.model.loginData"/>
+    <fullyQualifiedTypeName name="com.example.empdata.repository.loginRepository"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.actuate.autoconfigure.health.HealthEndpointProperties.Group"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.authority.SimpleGrantedAuthority"/>
+</qualifiedTypeNameHistroy>
